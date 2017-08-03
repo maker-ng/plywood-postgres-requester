@@ -1,5 +1,5 @@
 {
-  "name": "plywood-postgres-requester",
+  "name": "@longweiquan/plywood-postgres-requester",
   "version": "1.2.0",
   "description": "Postgres requester for Plywood (within node)",
   "keywords": [

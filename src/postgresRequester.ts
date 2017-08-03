@@ -33,6 +33,7 @@ export interface PostgresRequesterParameters {
   user: string;
   password: string;
   database: string;
+  ssl: boolean;
 }
 
 export function postgresRequesterFactory(parameters: PostgresRequesterParameters): PlywoodRequester<string> {
@@ -45,6 +46,7 @@ export function postgresRequesterFactory(parameters: PostgresRequesterParameters
   let user = parameters.user;
   let password = parameters.password;
   let database = parameters.database;
+  let ssl = parameters.ssl;
 
   return (request): Readable => {
     let query = request.query;
@@ -64,7 +66,7 @@ export function postgresRequesterFactory(parameters: PostgresRequesterParameters
           database: database,
           user: user,
           password: password,
-
+          ssl: ssl,
           parseInputDatesAsUTC: true // not in the type
         } as any);
 
